@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-//using System.Web.Script.Serialization;
 
 namespace Polimorfismo
 {
@@ -8,7 +7,7 @@ namespace Polimorfismo
     {
         public static void Main(string[] args)
         {
-            Veiculo veiculo = new Veiculo();
+            VeiculoBase veiculo = new VeiculoBase();
             veiculo.Revisao();
             Console.WriteLine(JsonConvert.SerializeObject(veiculo));
             Console.WriteLine("-------------------------------------------------------");
@@ -34,8 +33,8 @@ namespace Polimorfismo
         }
     }
 
-    //Classe BASE, onde todos veiculos possuem (ano,cor e modelo)
-    public class Veiculo 
+    //Classe BASE, onde todos veiculos possuem (ano,cor, km e modelo)
+    public class VeiculoBase 
     { 
         public int Ano { get; set; }
         public string Cor { get; set; }
@@ -51,9 +50,9 @@ namespace Polimorfismo
 
     /*
      * Classe DERIVADA, herda todos os métodos, campos, propriedades e eventos da classe base. 
-     * Mas pode alterar o comportamento de métodos virtuais.
+     * ----------------Pode pode alterar o comportamento de métodos virtuais.--------------
     */
-    public class Carro : Veiculo
+    public class Carro : VeiculoBase
     { 
         public int QuatidadePorta { get; set; }
 
@@ -67,9 +66,9 @@ namespace Polimorfismo
 
     /*
      * Classe DERIVADA, herda todos os métodos, campos, propriedades e eventos da classe base. 
-     * -----------------Mas pode alterar o comportamento de métodos virtuais.-----------------
+     * -----------------Pode alterar o comportamento de métodos virtuais.-----------------
     */
-    public class Caminhao : Veiculo 
+    public class Caminhao : VeiculoBase 
     { 
         public int CapacidadeCarga { get; set; }
 
