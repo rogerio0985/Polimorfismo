@@ -6,7 +6,7 @@ Neste cenário, temos:
 -Classe BASE(abstract) porque não pode ser instanciada, permite que você crie métodos que estão incompletos e devem ser implementados em uma classe derivada.
 -As propriedades (ano,cor, km e modelo) que as classes derivadas vão herdar e os métodos virtual "Revisao" porque não obrigatório implementar, e abstract "CalcularNumeroRevisao" porque é obrigatório implementar.
 
-/*Nosso clase base(VeiculoBase), com as propriedades e os metodos virtual e abstract*/
+/*Nossa clase base(VeiculoBase), com as propriedades e os metodos virtual e abstract*/
 public abstract class VeiculoBase 
 { 
    public int Ano { get; set; }
